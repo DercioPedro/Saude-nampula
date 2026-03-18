@@ -113,7 +113,7 @@ function mostrarMensagemVazia(gridElement) {
     msg.className = 'empty-message';
     msg.innerHTML = `
         <div style="text-align: center; padding: 40px 20px; background: white; border-radius: 12px; grid-column: 1/-1;">
-            <span style="font-size: 48px; display: block; margin-bottom: 16px;">💊</span>
+            <span style="font-size: 48px; display: block; margin-bottom: 16px;"></span>
             <h3 style="font-size: 24px; color: #1f2937; margin-bottom: 16px;">Nenhuma farmácia cadastrada</h3>
             <p style="color: #6b7280; margin-bottom: 20px;">As farmácias cadastradas aparecerão aqui.</p>
             <button onclick="carregarFarmaciasExemplo()" style="background: #7c3aed; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer;">
@@ -178,20 +178,20 @@ function criarCardFarmacia(farmacia) {
                 <h3>${nome}</h3>
                 ${badgePlantao}
             </div>
-            <span class="farmacia-icon"></span>
+            <span class="farmacia-icon">img/comprimidos.png</span>
         </div>
 
         <div class="farmacia-details">
             <div class="detail-item">
-                <span class="detail-icon"></span>
+                <span class="detail-icon">img/ponto.png</span>
                 <span>${endereco}</span>
             </div>
             <div class="detail-item">
-                <span class="detail-icon"></span>
+                <span class="detail-icon">img/call.png</span>
                 <span>${telefone}</span>
             </div>
             <div class="detail-item">
-                <span class="detail-icon"></span>
+                <span class="detail-icon">img/clock.png</span>
                 <span>${horario}</span>
             </div>
         </div>
