@@ -178,20 +178,20 @@ function criarCardFarmacia(farmacia) {
                 <h3>${nome}</h3>
                 ${badgePlantao}
             </div>
-            <span class="farmacia-icon">img/comprimidos.png</span>
+            <span class="farmacia-icon"><img src="img/comprimidos.png" alt=""></span>
         </div>
 
         <div class="farmacia-details">
             <div class="detail-item">
-                <span class="detail-icon">img/ponto.png</span>
+                <span class="detail-icon"></span>
                 <span>${endereco}</span>
             </div>
             <div class="detail-item">
-                <span class="detail-icon">img/call.png</span>
+                <span class="detail-icon"></span>
                 <span>${telefone}</span>
             </div>
             <div class="detail-item">
-                <span class="detail-icon">img/clock.png</span>
+                <span class="detail-icon"></span>
                 <span>${horario}</span>
             </div>
         </div>
