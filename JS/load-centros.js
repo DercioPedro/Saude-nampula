@@ -183,12 +183,42 @@ function filtrarCentros(bairro) {
     }
 }
 
-// Carregar farmácias de exemplo (corrigido)
-function carregarCentrosExemplo() {
-    localStorage.setItem('centros', JSON.stringify(centrosExemplo));
-    carregarCentros();
-}
+// Carregar centros do localStorage
+function carregarCentros() {
+    // Inicializar dados se necessário
+    inicializarDados();
 
+    // Recupera dados do localStorage
+    let dados = localStorage.getItem('centros');
+    let centros = dados ? JSON.parse(dados) : [];
+
+    // Seleciona a grid de centros
+    let centrosGrid = document.querySelector('.centros-grid');
+
+    if (!centrosGrid) {
+        console.error("Elemento .centros-grid não encontrado!");
+        return;
+    }
+
+    // Limpa a grid
+    centrosGrid.innerHTML = '';
+
+    // Remove mensagem vazia se existir
+    let msgVazia = document.querySelector('.empty-message');
+    if (msgVazia) msgVazia.remove();
+
+    // Se não há centros, mostra mensagem
+    if (centros.length === 0) {
+        mostrarMensagemVazia(centrosGrid);
+        return;
+    }
+
+    // Cria cards para cada centro
+    for (let i = 0; i < centros.length; i++) {
+        let card = criarCardCentro(centros[i]);
+        centrosGrid.appendChild(card);
+    }
+}
 // ir para detalhes
 function verDetalhes(id) {
     window.location.href = 'centros-detalhes.html?id=' + id;
