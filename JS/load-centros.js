@@ -1,3 +1,69 @@
+const centrosExemplo = [
+    {
+        id: 1,
+        nome: "Farmácia Moderna",
+        endereco: "Av. Eduardo Mondlane, Centro",
+        telefone: "+258 26 213000",
+        horario: "Aberto 24 Horas",
+        plantao: true,
+        medicamentos: ["Paracetamol 500mg - 50 MZN", "Amoxicilina 500mg - 120 MZN", "Ibuprofeno 400mg - 65 MZN"]
+    },
+    {
+        id: 2,
+        nome: "Farmácia Central",
+        endereco: "Centro da Cidade, Nampula",
+        telefone: "+258 26 213001",
+        horario: "08:00 - 20:00",
+        plantao: false,
+        medicamentos: ["Paracetamol 500mg - 45 MZN", "Dipirona 500mg - 40 MZN", "Omeprazol 20mg - 90 MZN"]
+    },
+    {
+        id: 3,
+        nome: "Farmácia São José",
+        endereco: "Bairro Muhala, Nampula",
+        telefone: "+258 26 213002",
+        horario: "08:00 - 18:00",
+        plantao: false,
+        medicamentos: ["Paracetamol 500mg - 48 MZN", "Amoxicilina 500mg - 115 MZN", "Losartana 50mg - 85 MZN"]
+    },
+    {
+        id: 4,
+        nome: "Farmácia Mucatine",
+        endereco: "Bairro Mucatine, Nampula",
+        telefone: "+258 26 213003",
+        horario: "07:00 - 19:00",
+        plantao: false,
+        medicamentos: ["Paracetamol 500mg - 47 MZN", "Ibuprofeno 400mg - 62 MZN", "Azitromicina 500mg - 150 MZN"]
+    },
+    {
+        id: 5,
+        nome: "Farmácia Popular",
+        endereco: "Mercado Central, Nampula",
+        telefone: "+258 26 213004",
+        horario: "08:00 - 18:00",
+        plantao: false,
+        medicamentos: ["Paracetamol 500mg - 42 MZN", "Dipirona 500mg - 38 MZN", "Metformina 850mg - 75 MZN"]
+    },
+    {
+        id: 6,
+        nome: "Farmácia Saúde",
+        endereco: "Av. do Trabalho, Nampula",
+        telefone: "+258 26 213005",
+        horario: "Aberto 24 Horas",
+        plantao: true,
+        medicamentos: ["Paracetamol 500mg - 52 MZN", "Amoxicilina 500mg - 125 MZN", "Omeprazol 20mg - 95 MZN"]
+    }
+];
+
+// Inicializar localStorage com dados de exemplo se estiver vazio
+function inicializarDados() {
+    let dados = localStorage.getItem('centros');
+    if (!dados || JSON.parse(dados).length === 0) {
+        localStorage.setItem('centros', JSON.stringify(centrosExemplo));
+        console.log("Dados de exemplo carregados no localStorage");
+    }
+}
+
 // carregar centros
 function carregarCentros() {
     let dados = localStorage.getItem('centros');
