@@ -183,6 +183,12 @@ function filtrarCentros(bairro) {
     }
 }
 
+// Carregar farmácias de exemplo
+function carregarcentrossExemplo() {
+    localStorage.setItem('centros', JSON.stringify(centrossExemplo));
+    carregarcentros();
+}
+
 // ir para detalhes
 function verDetalhes(id) {
     window.location.href = 'centros-detalhes.html?id=' + id;
