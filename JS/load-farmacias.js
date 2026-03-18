@@ -178,20 +178,20 @@ function criarCardFarmacia(farmacia) {
                 <h3>${nome}</h3>
                 ${badgePlantao}
             </div>
-            <span class="farmacia-icon">💊</span>
+            <span class="farmacia-icon"></span>
         </div>
 
         <div class="farmacia-details">
             <div class="detail-item">
-                <span class="detail-icon">📍</span>
+                <span class="detail-icon"></span>
                 <span>${endereco}</span>
             </div>
             <div class="detail-item">
-                <span class="detail-icon">📞</span>
+                <span class="detail-icon"></span>
                 <span>${telefone}</span>
             </div>
             <div class="detail-item">
-                <span class="detail-icon">🕒</span>
+                <span class="detail-icon"></span>
                 <span>${horario}</span>
             </div>
         </div>
@@ -205,10 +205,10 @@ function criarCardFarmacia(farmacia) {
 
         <div class="button-container">
             <button class="medicamentos-btn" onclick="window.location.href='medicamentos.html?farmacia=${nomeCodificado}&id=${id}'">
-                💊 Medicamentos
+                 Medicamentos
             </button>
             <button class="details-btn" onclick="window.location.href='detalhes-farmacia.html?farmacia=${nomeCodificado}&id=${id}'">
-                📋 Detalhes
+                 Detalhes
             </button>
         </div>
     `;
@@ -331,7 +331,7 @@ function carregarMedicamentosDaFarmacia() {
         <div style="max-width: 800px; margin: 40px auto; padding: 30px; background: white; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
             <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px;">
                 <a href="farm.html" style="text-decoration: none; color: #7c3aed; font-size: 18px;">← Voltar</a>
-                <h1 style="color: #1f2937; margin: 0;">💊 ${nomeDecodificado}</h1>
+                <h1 style="color: #1f2937; margin: 0;"> ${nomeDecodificado}</h1>
             </div>
             
             <h2 style="color: #374151; margin-bottom: 20px;">Medicamentos Disponíveis</h2>
@@ -361,7 +361,7 @@ function carregarMedicamentosDaFarmacia() {
             </div>
             
             <div style="margin-top: 30px; padding: 20px; background: #faf5ff; border-radius: 8px;">
-                <h3 style="color: #5b21b6; margin-bottom: 10px;">📞 Contacto</h3>
+                <h3 style="color: #5b21b6; margin-bottom: 10px;"> Contacto</h3>
                 <p style="color: #4b5563;">Telefone: ${farmacia ? farmacia.telefone : 'Disponível na farmácia'}</p>
                 <p style="color: #4b5563;">Endereço: ${farmacia ? farmacia.endereco : 'Disponível na farmácia'}</p>
             </div>
@@ -411,7 +411,7 @@ function carregarDetalhesDaFarmacia() {
     let container = document.querySelector('.detalhes-container') || document.body;
 
     // Determinar status
-    let plantaoTexto = farmacia && farmacia.plantao ? '✅ Sim (24 horas)' : '❌ Não';
+    let plantaoTexto = farmacia && farmacia.plantao ? ' Sim (24 horas)' : ' Não';
     let horario = farmacia ? (farmacia.horario || (farmacia.plantao ? '24 horas' : '08:00 - 18:00')) : 'Informação não disponível';
 
     // Gerar link do Google Maps baseado no endereço
