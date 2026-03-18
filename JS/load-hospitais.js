@@ -1,3 +1,100 @@
+const hospitaisExemplo = [
+    {
+        id: 1,
+        nome: "Hospital Central de Nampula",
+        endereco: "Av. Eduardo Mondlane, Centro",
+        telefone: "+258 26 210000",
+        horario: "Aberto 24 Horas",
+        emergencia: true,
+        especialidades: ["Clínica Geral", "Cirurgia", "Pediatria", "Ginecologia"]
+    },
+    {
+        id: 2,
+        nome: "Hospital Provincial de Nampula",
+        endereco: "Centro da Cidade, Nampula",
+        telefone: "+258 26 210001",
+        horario: "08:00 - 20:00",
+        emergencia: true,
+        especialidades: ["Clínica Geral", "Ortopedia", "Oftalmologia"]
+    },
+    {
+        id: 3,
+        nome: "Hospital Rural de Muhala",
+        endereco: "Bairro Muhala, Nampula",
+        telefone: "+258 26 210002",
+        horario: "08:00 - 18:00",
+        emergencia: false,
+        especialidades: ["Clínica Geral", "Pediatria"]
+    },
+    {
+        id: 4,
+        nome: "Hospital Distrital de Mucatine",
+        endereco: "Bairro Mucatine, Nampula",
+        telefone: "+258 26 210003",
+        horario: "07:00 - 19:00",
+        emergencia: false,
+        especialidades: ["Clínica Geral", "Ginecologia", "Medicina Interna"]
+    },
+    {
+        id: 5,
+        nome: "Hospital Popular de Nampula",
+        endereco: "Mercado Central, Nampula",
+        telefone: "+258 26 210004",
+        horario: "08:00 - 18:00",
+        emergencia: false,
+        especialidades: ["Clínica Geral", "Pediatria", "Dermatologia"]
+    },
+    {
+        id: 6,
+        nome: "Hospital Saúde",
+        endereco: "Av. do Trabalho, Nampula",
+        telefone: "+258 26 210005",
+        horario: "Aberto 24 Horas",
+        emergencia: true,
+        especialidades: ["Clínica Geral", "Cirurgia", "Cardiologia"]
+    }
+];
+
+// Inicializar localStorage com dados de exemplo se estiver vazio
+function inicializarDados() {
+    let dados = localStorage.getItem('hospitais');
+    if (!dados || JSON.parse(dados).length === 0) {
+        localStorage.setItem('hospitais', JSON.stringify(hospitaisExemplo));
+        console.log("Dados de exemplo carregados no localStorage");
+    }
+}
+
+// Carregar hospitais do localStorage
+function carregarHospitais() {
+    inicializarDados();
+
+    let dados = localStorage.getItem('hospitais');
+    let hospitais = dados ? JSON.parse(dados) : [];
+
+    let hospitaisGrid = document.querySelector('.hospitais-grid');
+
+    if (!hospitaisGrid) {
+        console.error("Elemento .hospitais-grid não encontrado!");
+        return;
+    }
+
+    hospitaisGrid.innerHTML = '';
+
+    let msgVazia = document.querySelector('.empty-message');
+    if (msgVazia) msgVazia.remove();
+
+    if (hospitais.length === 0) {
+        mostrarMensagemVazia(hospitaisGrid);
+        return;
+    }
+
+    for (let i = 0; i < hospitais.length; i++) {
+        let card = criarCardHospital(hospitais[i]);
+        hospitaisGrid.appendChild(card);
+    }
+}
+
+
 // carregar hospitais do localStorage
 function carregarHospitais() {
     let dados = localStorage.getItem('hospitais');
