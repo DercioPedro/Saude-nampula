@@ -1,7 +1,7 @@
 const centrosExemplo = [
     {
         id: 1,
-        nome: "Farmácia Moderna",
+        nome: "Centro de Saúde de Muatala",
         endereco: "Av. Eduardo Mondlane, Centro",
         telefone: "+258 26 213000",
         horario: "Aberto 24 Horas",
@@ -10,7 +10,7 @@ const centrosExemplo = [
     },
     {
         id: 2,
-        nome: "Farmácia Central",
+        nome: "Centro de Saude Natikire ",
         endereco: "Centro da Cidade, Nampula",
         telefone: "+258 26 213001",
         horario: "08:00 - 20:00",
@@ -19,8 +19,8 @@ const centrosExemplo = [
     },
     {
         id: 3,
-        nome: "Farmácia São José",
-        endereco: "Bairro Muhala, Nampula",
+        nome: "Centro de Saude Napipine",
+        endereco: "Bairro Natikere, Nampula",
         telefone: "+258 26 213002",
         horario: "08:00 - 18:00",
         plantao: false,
@@ -37,7 +37,7 @@ const centrosExemplo = [
     },
     {
         id: 5,
-        nome: "Farmácia Popular",
+        nome: "Centro de Boa Saude",
         endereco: "Mercado Central, Nampula",
         telefone: "+258 26 213004",
         horario: "08:00 - 18:00",
@@ -46,7 +46,7 @@ const centrosExemplo = [
     },
     {
         id: 6,
-        nome: "Farmácia Saúde",
+        nome: "Centro de Saude Good",
         endereco: "Av. do Trabalho, Nampula",
         telefone: "+258 26 213005",
         horario: "Aberto 24 Horas",
